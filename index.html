@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes de 2013 por Orçamento</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a1929;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #051321;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #62bcfa;
+            margin: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: #0d2438;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            color: #62bcfa;
+            margin-top: 0;
+            padding-right: 40px;
+        }
+        .card p {
+            margin-bottom: 8px;
+        }
+        .rank {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #62bcfa;
+            color: #051321;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .orcamento {
+            font-weight: bold;
+            color: #a0d8ff;
+        }
+        .bilheteria {
+            color: #8cff8c;
+        }
+        .lucro {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            background-color: #051321;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+        }
+        a {
+            color: #62bcfa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #a0d8ff;
+            text-decoration: underline;
+        }
+        .navigation {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .intro {
+            background-color: #0d2438;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 10px;
+            border-radius: 2px;
+        }
+        .legend-orcamento {
+            background-color: #a0d8ff;
+        }
+        .legend-bilheteria {
+            background-color: #8cff8c;
+        }
+        .legend-lucro {
+            background-color: #ffd700;
+        }
+        .stats {
+            background-color: #0d2438;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .stats h2 {
+            color: #62bcfa;
+            text-align: center;
+            margin-top: 0;
+        }
+        .stats ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .stats li {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 3px solid #62bcfa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Os 15 Filmes de 2013 com Maior Orçamento</h1>
+    </header>
+    <div class="container">
+        
+        <div class="intro">
+            <p>2013 foi um ano importante para o cinema, com o lançamento de grandes produções de diversos gêneros. Nesta página, apresentamos os filmes lançados neste ano com os maiores orçamentos, ordenados em ordem decrescente. Além do orçamento, também mostramos a bilheteria mundial e o lucro aproximado.</p>
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color legend-orcamento"></div>
+                    <span>Orçamento</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-bilheteria"></div>
+                    <span>Bilheteria</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color legend-lucro"></div>
+                    <span>Lucro</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="rank">1</div>
+                <h3>Piratas do Caribe: Navegando em Águas Misteriosas</h3>
+                <p>Diretor: Rob Marshall</p>
+                <p class="orcamento">Orçamento: $378 milhões</p>
+                <p class="bilheteria">Bilheteria: $1,045 bilhão</p>
+                <p class="lucro">Lucro: $667 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">2</div>
+                <h3>O Hobbit: A Desolação de Smaug</h3>
+                <p>Diretor: Peter Jackson</p>
+                <p class="orcamento">Orçamento: $225 milhões</p>
+                <p class="bilheteria">Bilheteria: $958 milhões</p>
+                <p class="lucro">Lucro: $733 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">3</div>
+                <h3>Homem de Ferro 3</h3>
+                <p>Diretor: Shane Black</p>
+                <p class="orcamento">Orçamento: $200 milhões</p>
+                <p class="bilheteria">Bilheteria: $1,215 bilhão</p>
+                <p class="lucro">Lucro: $1,015 bilhão</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">4</div>
+                <h3>Oz: Mágico e Poderoso</h3>
+                <p>Diretor: Sam Raimi</p>
+                <p class="orcamento">Orçamento: $200 milhões</p>
+                <p class="bilheteria">Bilheteria: $493 milhões</p>
+                <p class="lucro">Lucro: $293 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">5</div>
+                <h3>Universidade Monstros</h3>
+                <p>Diretor: Dan Scanlon</p>
+                <p class="orcamento">Orçamento: $200 milhões</p>
+                <p class="bilheteria">Bilheteria: $743 milhões</p>
+                <p class="lucro">Lucro: $543 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">6</div>
+                <h3>Thor: O Mundo Sombrio</h3>
+                <p>Diretor: Alan Taylor</p>
+                <p class="orcamento">Orçamento: $170 milhões</p>
+                <p class="bilheteria">Bilheteria: $644 milhões</p>
+                <p class="lucro">Lucro: $474 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">7</div>
+                <h3>Jogos Vorazes: Em Chamas</h3>
+                <p>Diretor: Francis Lawrence</p>
+                <p class="orcamento">Orçamento: $170 milhões</p>
+                <p class="bilheteria">Bilheteria: $865 milhões</p>
+                <p class="lucro">Lucro: $695 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">8</div>
+                <h3>Superman: O Homem de Aço</h3>
+                <p>Diretor: Zack Snyder</p>
+                <p class="orcamento">Orçamento: $165 milhões</p>
+                <p class="bilheteria">Bilheteria: $668 milhões</p>
+                <p class="lucro">Lucro: $503 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">9</div>
+                <h3>Velozes & Furiosos 6</h3>
+                <p>Diretor: Justin Lin</p>
+                <p class="orcamento">Orçamento: $160 milhões</p>
+                <p class="bilheteria">Bilheteria: $788 milhões</p>
+                <p class="lucro">Lucro: $628 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">10</div>
+                <h3>Guerra Mundial Z</h3>
+                <p>Diretor: Marc Forster</p>
+                <p class="orcamento">Orçamento: $150 milhões</p>
+                <p class="bilheteria">Bilheteria: $540 milhões</p>
+                <p class="lucro">Lucro: $390 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">11</div>
+                <h3>Elysium</h3>
+                <p>Diretor: Neill Blomkamp</p>
+                <p class="orcamento">Orçamento: $115 milhões</p>
+                <p class="bilheteria">Bilheteria: $286 milhões</p>
+                <p class="lucro">Lucro: $171 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">12</div>
+                <h3>Gravidade</h3>
+                <p>Diretor: Alfonso Cuarón</p>
+                <p class="orcamento">Orçamento: $100 milhões</p>
+                <p class="bilheteria">Bilheteria: $723 milhões</p>
+                <p class="lucro">Lucro: $623 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">13</div>
+                <h3>Oblivion</h3>
+                <p>Diretor: Joseph Kosinski</p>
+                <p class="orcamento">Orçamento: $100 milhões</p>
+                <p class="bilheteria">Bilheteria: $286 milhões</p>
+                <p class="lucro">Lucro: $186 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">14</div>
+                <h3>Depois da Terra</h3>
+                <p>Diretor: M. Night Shyamalan</p>
+                <p class="orcamento">Orçamento: $100 milhões</p>
+                <p class="bilheteria">Bilheteria: $251 milhões</p>
+                <p class="lucro">Lucro: $151 milhões</p>
+            </div>
+            
+            <div class="card">
+                <div class="rank">15</div>
+                <h3>Gente Grande 2</h3>
+                <p>Diretor: Dennis Dugan</p>
+                <p class="orcamento">Orçamento: $80 milhões</p>
+                <p class="bilheteria">Bilheteria: $247 milhões</p>
+                <p class="lucro">Lucro: $167 milhões</p>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <h2>Análise dos Filmes de 2013</h2>
+            <ul>
+                <li><strong>Filme com maior orçamento:</strong> "Piratas do Caribe: Navegando em Águas Misteriosas" ($378 milhões)</li>
+                <li><strong>Filme com maior bilheteria:</strong> "Homem de Ferro 3" ($1,215 bilhão)</li>
+                <li><strong>Maior retorno sobre investimento:</strong> "Homem de Ferro 3" (507% de retorno)</li>
+                <li><strong>Posição de "Gravidade":</strong> 12º em orçamento, 7º em bilheteria e 4º em lucro</li>
+                <li><strong>Média de orçamento dos 15 filmes:</strong> $167,5 milhões</li>
+                <li><strong>Média de bilheteria dos 15 filmes:</strong> $636,5 milhões</li>
+                <li><strong>Média de lucro dos 15 filmes:</strong> $469 milhões</li>
+            </ul>
+        </div>
+
+        <h3>Links Relacionados</h3>
+        <ul>
+            <li><a href="https://lucasfarias072.github.io/mock-web-page-gravidade-referencias/">inspirações para o filme</a></li>
+            <li><a href="https://lucasfarias072.github.io/mock-web-page-gravidade/">infos extras</a></li>
+        </ul>
+    </div>
+    <footer>
+        <p>&copy; 2025 Projeto de Web Crawling - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
